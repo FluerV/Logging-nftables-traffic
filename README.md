@@ -1,4 +1,4 @@
-## Logging-nftables-traffic
+## Logging nftables traffic
 
 If your computer was infected you need to check your firewall logs. The best way is to set up nftables. Netfilter doesn't logging traffic by default. You need to activate this function with a few easy steps.
 
