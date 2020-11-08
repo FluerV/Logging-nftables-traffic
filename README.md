@@ -55,9 +55,9 @@ When logging is enabled nftables starts write messages in var/log/kern.log (var/
 & stop
 ```
 
-Now rsyslogd deamon can find all messages contains keyword ("New Output packets: " and "New Input packets: ") and forward them to log files, created in var/log directory. 
+Now rsyslogd daemon can find all messages contains keyword ("New Output packets: " and "New Input packets: ") and forward them to log files, created in var/log directory. 
 
-Restart rsyslog deamon:
+Restart rsyslog daemon:
 
 ```
 /etc/init.d/rsyslog restart
