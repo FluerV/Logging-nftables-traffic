@@ -8,11 +8,13 @@ If your computer was infected you need to check your firewall logs. The best way
 vi /etc/nftables.conf
 ```
 
-Add rule to chain output:
+Add rule to chain input and chain output:
 
 ```
+log prefix "New Input packets: ";
 log prefix "New Output packets: ";
 ```
+
 Now you nftables.conf file should looks like this:
 
 ```
@@ -23,6 +25,7 @@ flush ruleset
 table inet filter {
         chain input {
                 type filter hook input priority 0; counter; policy accept;
+                log prefix "New Input packets: ";
         }
         chain forward {
                 type filter hook forward priority 0; counter; policy accept;
@@ -32,6 +35,7 @@ table inet filter {
                 log prefix "New Output packets: ";
         }
 }
+
 ```
 
 Don't forget restart nftables:
